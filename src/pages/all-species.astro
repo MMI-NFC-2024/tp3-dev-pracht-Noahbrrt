@@ -12,21 +12,11 @@ const penguinsChinstrap = penguins.filter((p) => p.species === "Chinstrap");
   <div class="p-4">
     <h1 class="text-2xl font-bold mb-4">Navigation entre les espèces</h1>
 
-    <nav class="mb-6">
-      <ul class="flex space-x-6">
-        <li>
-          <a href="#adelie" class="text-blue-600 hover:underline">Adelie</a>
-        </li>
-        <li>
-          <a href="#gentoo" class="text-blue-600 hover:underline">Gentoo</a>
-        </li>
-        <li>
-          <a href="#chinstrap" class="text-blue-600 hover:underline"
-            >Chinstrap</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <select id="species-slider" class="mb-6 border rounded px-2 py-1">
+      <option value="adelie">Adelie</option>
+      <option value="gentoo">Gentoo</option>
+      <option value="chinstrap">Chinstrap</option>
+    </select>
 
     <div class="slider-container">
       <section id="adelie" class="slide">
@@ -45,6 +35,13 @@ const penguinsChinstrap = penguins.filter((p) => p.species === "Chinstrap");
       </section>
     </div>
   </div>
+
+  <script>
+    document.querySelector("#species-slider")?.addEventListener("change", (evt) => {
+      const value = /** @type {HTMLSelectElement} */ (evt.target).value;
+      location.hash = value;
+    });
+  </script>
 </Layout>
 
 <style>
