@@ -1,0 +1,18 @@
+---
+const species = ["Adelie", "Chinstrap", "Gentoo"];
+const path = Astro.url.pathname;
+const current = path.split("/").filter(Boolean)[1] || "";
+---
+
+<select id="species" class="border rounded px-2 py-1">
+  {species.map(s => (
+    <option value={s} selected={current === s}>{s}</option>
+  ))}
+</select>
+
+<script>
+  document.querySelector("#species")?.addEventListener("change", (evt) => {
+    const value = /** @type {HTMLSelectElement} */ (evt.target).value;
+    location.pathname = "/species/" + value;
+  });
+</script>
