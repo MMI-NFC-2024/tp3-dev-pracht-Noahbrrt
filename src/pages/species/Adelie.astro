@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GraphicSpecies from "../../components/GraphicSpecies.astro";
+---
+<Layout>
+  <nav class="mb-4 flex gap-3 text-sm space-x-4">
+    <a class="underline" href="/species/Adelie">Adelie</a>
+    <a class="hover:underline" href="/species/Gentoo">Gentoo</a>
+    <a class="hover:underline" href="/species/Chinstrap">Chinstrap</a>
+</nav>
+
+  <h1 class="text-2xl mb-3">Adelie</h1>
+  <GraphicSpecies species="Adelie" />
+</Layout>

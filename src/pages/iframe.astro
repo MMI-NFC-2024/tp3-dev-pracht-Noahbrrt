@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+  <h1 class="text-2xl mb-4">Page avec IFRAME</h1>
+
+  <nav class="mb-4 flex gap-4 text-sm">
+    <a href="/species-iframe/Adelie" target="viz" class="underline">Adelie</a>
+    <a href="/species-iframe/Gentoo" target="viz" class="underline">Gentoo</a>
+    <a href="/species-iframe/Chinstrap" target="viz" class="underline">Chinstrap</a>
+  </nav>
+
+  <iframe
+  name="viz"
+  src="/species-iframe/Adelie"
+  class="w-full h-[600px] border rounded-md"
+  onload="resizeIframe(this)"
+></iframe>
+
+  <script>
+    function resizeIframe(iframe) {
+      const doc = iframe.contentWindow.document;
+      if (doc) {
+        const height = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight
+        );
+        iframe.style.height = height + "px";
+      }
+    }
+  </script>
+</Layout>
