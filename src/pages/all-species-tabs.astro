@@ -5,28 +5,64 @@ import { Tabs, TabsList, TabsTab, TabsPanel } from "accessible-astro-components"
 ---
 
 <Layout>
-  <div class="p-4">
-    <h1 class="text-2xl font-bold mb-4">Navigation entre les espèces — Onglets</h1>
+  <div class="p-6 max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6">Navigation entre les espèces — Onglets</h1>
 
     <Tabs>
-      <TabsList class="flex gap-2 mb-4">
-        <TabsTab id="tab-adelie" controls="panel-adelie" selected>Adelie</TabsTab>
-        <TabsTab id="tab-gentoo" controls="panel-gentoo">Gentoo</TabsTab>
-        <TabsTab id="tab-chinstrap" controls="panel-chinstrap">Chinstrap</TabsTab>
+      <!-- Barre d’onglets -->
+      <TabsList class="flex flex-wrap gap-2 mb-6 p-1 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <TabsTab
+          id="tab-adelie"
+          controls="panel-adelie"
+          selected
+          class="px-4 py-2 rounded-xl text-sm md:text-base transition hover:!bg-gray-100 focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-blue-500 focus-visible:!ring-offset-2 aria-selected:!bg-blue-600 aria-selected:!text-white aria-selected:!shadow !font-medium"
+        >
+          Adelie
+        </TabsTab>
+
+        <TabsTab
+          id="tab-gentoo"
+          controls="panel-gentoo"
+          class="px-4 py-2 rounded-xl text-sm md:text-base transition hover:!bg-gray-100 focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-blue-500 focus-visible:!ring-offset-2 aria-selected:!bg-blue-600 aria-selected:!text-white aria-selected:!shadow !font-medium"
+        >
+          Gentoo
+        </TabsTab>
+
+        <TabsTab
+          id="tab-chinstrap"
+          controls="panel-chinstrap"
+          class="px-4 py-2 rounded-xl text-sm md:text-base transition hover:!bg-gray-100 focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-blue-500 focus-visible:!ring-offset-2 aria-selected:!bg-blue-600 aria-selected:!text-white aria-selected:!shadow !font-medium"
+        >
+          Chinstrap
+        </TabsTab>
       </TabsList>
 
-      <TabsPanel id="panel-adelie" labelledby="tab-adelie" selected>
-        <h2 class="text-xl font-semibold mb-2">Adelie</h2>
+      <!-- Panneaux -->
+      <TabsPanel
+        id="panel-adelie"
+        labelledby="tab-adelie"
+        selected
+        class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
+      >
+        <h2 class="text-xl font-semibold mb-3">Adelie</h2>
         <GraphicSpecies species="Adelie" />
       </TabsPanel>
 
-      <TabsPanel id="panel-gentoo" labelledby="tab-gentoo">
-        <h2 class="text-xl font-semibold mb-2">Gentoo</h2>
+      <TabsPanel
+        id="panel-gentoo"
+        labelledby="tab-gentoo"
+        class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
+      >
+        <h2 class="text-xl font-semibold mb-3">Gentoo</h2>
         <GraphicSpecies species="Gentoo" />
       </TabsPanel>
 
-      <TabsPanel id="panel-chinstrap" labelledby="tab-chinstrap">
-        <h2 class="text-xl font-semibold mb-2">Chinstrap</h2>
+      <TabsPanel
+        id="panel-chinstrap"
+        labelledby="tab-chinstrap"
+        class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
+      >
+        <h2 class="text-xl font-semibold mb-3">Chinstrap</h2>
         <GraphicSpecies species="Chinstrap" />
       </TabsPanel>
     </Tabs>
